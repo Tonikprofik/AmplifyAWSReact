@@ -136,6 +136,22 @@ app.post("/products", function (req, res) {
   }
 });
 
+app.delete("/products", function (req, res) {
+  // Add your code here
+  const {event} = req.apiGateway
+  try {
+    await canPerformAction(event, 'Admin')
+    var params = {
+      TableName : ddb_table_name,
+      Key: { id: req.body.id }
+    }
+    await docClient.delete(params).promise()
+    res.json({success: 'succesfully deleted item yay'})
+  } catch (err) {
+    res.json({error: err})
+  }  
+});
+
 app.post("/products/*", function (req, res) {
   // Add your code here
   res.json({ success: "post call succeed!", url: req.url, body: req.body });
@@ -159,21 +175,7 @@ app.put("/products/*", function (req, res) {
  * Example delete method *
  ****************************/
 
-app.delete("/products", function (req, res) {
-  // Add your code here
-  const {event} = req.apiGateway
-  try {
-    await canPerformAction(event, 'Admin')
-    var params = {
-      TableName : ddb_table_name,
-      Key: { id: req.body.id }
-    }
-    await docClient.delete(params).promise()
-    res.json({success: 'succesfully deleted item yay'})
-  } catch (err) {
-    res.json({error: err})
-  }  
-});
+
 
 app.delete("/products/*", function (req, res) {
   // Add your code here
