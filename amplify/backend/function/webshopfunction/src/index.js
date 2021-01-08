@@ -1,9 +1,10 @@
-const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./app');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Router from './Router'
 
-const server = awsServerlessExpress.createServer(app);
+import 'antd/dist/antd.css'
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
 
-exports.handler = (event, context) => {
-  console.log(`EVENT: ${JSON.stringify(event)}`);
-  return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise;
-};
+ReactDOM.render(<Router />, document.getElementById('root'))
