@@ -1,5 +1,22 @@
 {
-  "auth": {},
+  "auth": {
+    "amplifyawsreact81006319": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "amplifyawsreact81006319PostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": false
+    }
+  },
   "function": {
     "amplifyawsreact81006319PostConfirmation": {
       "build": true,

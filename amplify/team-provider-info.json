@@ -16,6 +16,9 @@
         "amplifyawsreact81006319PostConfirmation": {
           "GROUP": "Admin"
         }
+      },
+      "auth": {
+        "amplifyawsreact81006319": {}
       }
     }
   }
