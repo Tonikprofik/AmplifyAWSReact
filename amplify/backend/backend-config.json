@@ -1,0 +1,10 @@
+{
+  "auth": {},
+  "function": {
+    "amplifyawsreact81006319PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
