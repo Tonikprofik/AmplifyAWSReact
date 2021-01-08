@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifyawsreact81006319": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "producttable": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

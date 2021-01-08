@@ -1,0 +1,45 @@
+{
+    "paths": [
+        {
+            "name": "/products",
+            "lambdaFunction": "webshopfunction",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/products"
+        }
+    ],
+    "resourceName": "webshopapi",
+    "apiName": "webshopapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "webshopfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-amplifyawsreact-dev-232205-authRole",
+        "unAuthRoleName": "amplify-amplifyawsreact-dev-232205-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "webshopfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
