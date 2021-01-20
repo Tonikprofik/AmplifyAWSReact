@@ -2,8 +2,11 @@
 
 Webshop CRUD app
 
-functions, serverless with AWS Amplify, 
-API built with Lambda, frontend with React , data with DynamoDB, user authentication with Cognito
+functions, serverless with AWS Amplify -
+API built with Lambda
+frontend with React 
+data with DynamoDB 
+user authentication with Cognito
 
 
 Full Stack Serverless
